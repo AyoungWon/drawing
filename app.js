@@ -3,7 +3,9 @@ const context = canvas.getContext("2d")
 const color = document.querySelector('#color-picker')
 const ranges = document.querySelectorAll('.range')
 const strokeRange = document.querySelector('#stroke-range')
-const textRange = document.querySelector('#textInput')
+const textSet = document.querySelector('.text-setting')
+const textInput = document.querySelector('#textInput')
+const textSize = document.querySelector('#font-size')
 const saveBtn = document.querySelector('.save')
 const modeBtns = document.querySelector('.mode-btns')
 let mode, prevX,prevY, lastX,lastY
@@ -46,7 +48,7 @@ ranges.forEach(range => {
 if(mode === "drawing"){
   strokeRange.style.display = "block"
 } else if (mode === "text"){
-  textRange.style.display = "block"
+  textSet.style.display = "flex"
 }
 }
 
@@ -64,9 +66,14 @@ const onMouseMove = (e) => {
 const handleCanvasClick = (e) => {
   const x = e.offsetX;
   const y = e.offsetY;
-  if(mode === "text" && textRange.value){
-    const loadText = textRange.value
-    context.font = '48pt gothic'
+  if(mode === "text" && textInput.value){
+    const loadText = textInput.value
+    if(textSize.value){
+      context.font =`${textSize.value}pt gothic`
+    }else {
+      context.font = '10pt gothic'
+    }
+    
     context.fillText(loadText, x,y)
   }
 
