@@ -9,13 +9,24 @@ body {
   padding: 50px;
 }
 
+.canvas-wrap {
+  position: relative;
+}
+
 .canvas {
+
   width: 700px;
   height: 700px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   margin-bottom: 50px;
+}
+
+.save {
+  position: absolute;
+  top: 0px;
+  right: -50px;
 }
 
 .controls {
@@ -25,10 +36,33 @@ body {
 }
 
 .controls .control-range {
-  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
-.control-btns button {
+#stroke-range {
+  color: #000;
+  background-color: #000;
+}
+
+#textInput {
+  height: 40px;
+  width: 200px;
+  font-size: 1rem;
+}
+
+
+
+.control-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-btns {
+  margin-right: 4px;
+}
+
+button {
   all: unset;
   cursor: pointer;
   background-color: white;
@@ -44,14 +78,16 @@ body {
   font-size: 20px;
 }
 
-#stroke-range {
-  color: #000;
-  background-color: #000;
-}
+
 
 #color-picker {
   border-radius: 4px;
-  height: 30px;
+  height: 36px;
   font-size: 16px;
+  
+}
+
+i {
+  pointer-events: none;
 }
 

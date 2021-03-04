@@ -12,8 +12,25 @@
 
 </head>
 <body>
-  <canvas class="canvas"></canvas>
+  <div class="canvas-wrap">
+    <canvas class="canvas"></canvas>
+    <button class="save"><i class="far fa-save"></i></button>
+  </div>
+  
+  
   <div class="controls">
+
+    <div class="control-btns">
+      <div class="mode-btns">
+        <button class="drwaing modeBtn" id="drawing"><i class="fas fa-pencil-alt"></i></button>
+        <button class="fill modeBtn" id="fill"><i class="fas fa-paint-roller"></i></button>
+        <button class="squre modeBtn" id="squre"><i class="far fa-square"></i></button>
+        <button class="circle modeBtn" id="circle"><i class="far fa-circle"></i></button>
+        <button class="text modeBtn" id="text"><i class="fas fa-font"></i></button>
+      </div>
+
+      <input type="text" id="color-picker" value="#000">
+    </div>
     <div class="control-range">
       <input 
       type="range"
@@ -21,16 +38,15 @@
       max="5"
       value="2.5"
       step="0.1"
+      class="range"
       id="stroke-range">
-      <input type="text" id="color-picker" value="#000">
+      <input 
+      type="text"
+      placeholder="텍스트를 입력하세요"
+      class="range"
+      id="textInput">
     </div>
-    <div class="control-btns">
-      <button class="drwaing"><i class="fas fa-pencil-alt"></i></button>
-      <button class="fill"><i class="fas fa-paint-roller"></i></button>
-      <button class="squre"><i class="far fa-square"></i></button>
-      <button class="circle"><i class="far fa-circle"></i></button>
-      <button class="text"><i class="fas fa-font"></i></button>
-    </div>
+
   </div>
   
   
