@@ -1,6 +1,7 @@
 const canvas = document.querySelector('.canvas')
 const context = canvas.getContext("2d")
 const color = document.querySelector('#color-picker')
+const colorSelectBtn = document.querySelector('.sp-choose')
 const ranges = document.querySelectorAll('.range')
 const strokeRange = document.querySelector('#stroke-range')
 const textSet = document.querySelector('.text-setting')
@@ -9,7 +10,7 @@ const textSize = document.querySelector('#font-size')
 const saveBtn = document.querySelector('.save')
 const modeBtns = document.querySelector('.mode-btns')
 let mode, prevX,prevY, lastX,lastY
-let painting = false;
+let drawing = false;
 
 const COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
@@ -31,16 +32,15 @@ $('#color-picker').spectrum({
 });
 
 
-const handleColorClick = () => {
-console.log('a')
-}
-
 const handleSaveClick = () => {
-
+  const image = canvas.toDataURL();
+  const link = document.createElement("a");
+  link.href = image;
+  link.download = "work";
+  link.click();
 }
 const handleModeClick = (e) => {
 mode = e.target.getAttribute('id')
-console.log(ranges)
 console.log(mode)
 ranges.forEach(range => {
   range.style.display = "none"
@@ -55,7 +55,7 @@ if(mode === "drawing"){
 const onMouseMove = (e) => {
   const x = e.offsetX;
   const y = e.offsetY;
-  if (!painting) {
+  if (!drawing) {
     context.beginPath();
     context.moveTo(x, y);
   } else {
@@ -64,6 +64,8 @@ const onMouseMove = (e) => {
   }
 }
 const handleCanvasClick = (e) => {
+  context.strokeStyle = color.value
+  context.fillStyle = color.value
   const x = e.offsetX;
   const y = e.offsetY;
   if(mode === "text" && textInput.value){
@@ -73,35 +75,34 @@ const handleCanvasClick = (e) => {
     }else {
       context.font = '10pt gothic'
     }
-    
     context.fillText(loadText, x,y)
+  }else if(mode === "fill"){
+    context.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
   }
 
 
 }
-const handleCM = () => {
-
-}
-const startPainting = () => {
-
+const handleCM = (e) => {
+  e.preventDefault();
 }
 const stopPainting = () => {
-
+  drawing = false
 }
+
 const onMousedown = (e) => {
   prevX = e.offsetX;
-  prevY = e.offsetY
-if(mode === drawing){
-
-}else if(mode === "squre"){
-
-}
+  prevY = e.offsetY;
+  context.strokeStyle = color.value
+  context.fillStyle = color.value
+  if(mode === "drawing"){
+  drawing = true
+  }
 }
 const onMouseUp = (e) => {
   lastX = e.offsetX;
-  lastY = e.offsetY
-if(mode === drawing){
-
+  lastY = e.offsetY;
+if(mode === "drawing"){
+  drawing = false
 }else if(mode === "squre"){
  context.fillRect(prevX, prevY, lastX - prevX, lastY-prevY)
 }else if(mode === "circle"){
@@ -121,7 +122,5 @@ if (canvas) {
   canvas.addEventListener("contextmenu", handleCM);
 }
 
-
-color.addEventListener('click', handleColorClick)
 saveBtn.addEventListener('click', handleSaveClick)
 modeBtns.addEventListener('click', handleModeClick)

@@ -41,6 +41,7 @@ body {
 
 .range {
   display: none;
+  box-shadow: none;
 }
 
 #stroke-range {
@@ -50,7 +51,7 @@ body {
 
 .text-setting {
   width: 500px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -84,7 +85,6 @@ body {
 .text-setting #font-size {
   width: 50px;
   border: none;
-
   
 }
 
@@ -117,8 +117,7 @@ button {
 
 input {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+
 }
 
 #color-picker {
