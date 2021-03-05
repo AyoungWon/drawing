@@ -14,7 +14,10 @@
 <body>
   <div class="canvas-wrap">
     <canvas class="canvas"></canvas>
-    <button class="save"><i class="far fa-save"></i></button>
+    <div class="btns">
+      <button class="save"><i class="far fa-save"></i></button>
+      <button class="reset"><i class="fas fa-redo-alt"></i></button>
+    </div>
   </div>
   
   
@@ -55,6 +58,13 @@
           id="font-size">
         </div>
        
+      </div>
+      <div class="stroke-setting range">
+        <label for="font">StrokeColor</label>
+        <input 
+        name="strokeColor"
+        value="transparent"
+        id="strokeColor">
       </div>
   
     </div>
