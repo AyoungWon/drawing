@@ -22,10 +22,16 @@ body {
   margin-bottom: 50px;
 }
 
-.save {
+.canvas-wrap .btns {
   position: absolute;
   top: 0px;
   right: -50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-wrap .btns button {
+  margin-bottom: 4px;
 }
 
 .controls {
@@ -41,7 +47,6 @@ body {
 
 .range {
   display: none;
-  box-shadow: none;
 }
 
 #stroke-range {
@@ -62,17 +67,17 @@ body {
   font-size: 1.25rem;
 }
 
-.font-size-wrap {
+.font-size-wrap, .stroke-setting {
   border-radius: 8px;
   overflow: hidden;
   margin-left: 1rem;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.text-setting label {
+.text-setting label , .stroke-setting label {
   display: inline-block;
   height: 40px;
-  width: 40px;
+  width: 60px;
   font-size: 1.25rem;
   background-color: #9fc5e8;
   color: #fff;
@@ -82,10 +87,19 @@ body {
   margin-right: -4px;
 
 }
-.text-setting #font-size {
-  width: 50px;
+
+.stroke-setting label {
+  width: 200px;
+}
+.text-setting #font-size  {
+  width: 60px;
   border: none;
   
+}
+
+.stroke-setting #strokeColor {
+  width: 100px;
+  border: none;
 }
 
 
@@ -131,3 +145,28 @@ i {
   pointer-events: none;
 }
 
+button:active {
+  transform: scale(0.9);
+}
+
+input[type=range]{
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 300px;
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: goldenrod;
+  margin-top: -4px;
+}
