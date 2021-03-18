@@ -17,7 +17,7 @@ let drawing = false;
 let fill = false
 
 const COLOR = "#2c2c2c";
-const CANVAS_SIZE = 700;
+const CANVAS_SIZE = 500;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 context.fillStyle = "white";
