@@ -27,7 +27,7 @@
 ## 특징
 |||
 |:---:|:---:|
-| <img src="/README.assets/asset2.png"  width="300px" height="200px"><br>펜툴로 그림을 그릴수 있습니다.<br><br>|<img src="/README.assets/asset3.png"  width="300px" height="200px"><br>텍스트도 입력 가능합니다.|
-|<img src="/README.assets/asset4.png"  width="300px" height="200px"><br>도형도 그릴 수 있으며, 도형 채우기와 테두리 선택도 가능합니다.<br><br>|<img src="/README.assets/asset5.png"  width="300px" height="200px"><br>그림 그리기를 완료한 후 png형태로 파일을 저장할 수 있습니다.|
+| <img src="/README.assets/asset2.png"  width="300px" height="200px"><br>다양한 색상을 선택하여 그릴 수 있습니다.<br>|<img src="/README.assets/asset3.png"  width="300px" height="200px"><br>텍스트도 입력 가능합니다.|
+|<img src="/README.assets/asset4.png"  width="300px" height="200px"><br>도형도 그릴 수 있으며, 도형 채우기와 테두리 선택도 가능합니다.<br>|<img src="/README.assets/asset5.png"  width="300px" height="200px"><br>그림 그리기를 완료한 후 png형태로 파일을 저장할 수 있습니다.|
 
 
